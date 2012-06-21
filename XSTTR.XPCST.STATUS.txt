@@ -1,0 +1,13 @@
+LIST DICT STUDENT.TERMS 'XSTTR.XPCST.STATUS' LPTR BY TYP BY LOC TYP LOC CONV NAME FORMAT SM ASSOC 14:12:40 Jun 15 2012 1
+@ID............ TYP LOC.......... CONV NAME........... FORMAT SM ASSOC.....
+ 
+XSTTR.XPCST.STA I   TRANS("PUC.CA      Status          2L     S
+TUS                 NVAS.STU.TERM
+                    S",((((STTR.S
+                    TUDENT:"*"):S
+                    TTR.TERM):"*"
+                    ):STTR.ACAD.L
+                    EVEL),"XPCST.
+                    STATUS","X")
+1 record listed
+

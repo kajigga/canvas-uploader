@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<helpItems xmlns="http://msh" schema="maml">
+  
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Export-Zip</command:name>
+      <maml:description>
+        <maml:para>Exports files into a Zip Archive</maml:para>
+      </maml:description>
+
+      <maml:copyright>
+        <maml:para>Copyright (C) 2010 by Maierhofer Software, Germany</maml:para>
+      </maml:copyright>
+      
+      <command:verb>Export</command:verb>
+      <command:noun>Zip</command:noun>
+      
+      <dev:version>0.1</dev:version>
+      
+    </command:details>
+    <maml:description>
+      <!--This is the Description section-->
+      <maml:para>Export-Zip exports files in the pipleline in one or more zip archive files.</maml:para>
+    </maml:description>
+    
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Export-Zip</maml:name>
+        
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)" position = "1" >
+          <maml:name>ZipFile</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>
+
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)" position="2">
+          <maml:name>EntryFile</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>
+
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)" position="3">
+          <maml:name>EntryZip</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>        
+        
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)">
+          <maml:name>EntryRoot</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>
+
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)">
+          <maml:name>EntryDir</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>        
+
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "false">
+          <maml:name>Append</maml:name>
+        </command:parameter>
+
+      </command:syntaxItem>
+    </command:syntax>
+    
+    <command:parameters>
+      
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="1">
+        <maml:name>ZipFile</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>Zip File Path</maml:para>
+        </maml:description>
+      </command:parameter>
+
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="2">
+        <maml:name>EntryFile</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>The path to the entry (file) to add in the zip archive.</maml:para>
+          <maml:para>In pipelined mode files are detechted by the properies Name and DirName</maml:para>
+        </maml:description>
+      </command:parameter>
+
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="3">
+        <maml:name>EntryZip</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>The path (directory + name) of the enty in the zip archive.</maml:para>
+        </maml:description>
+      </command:parameter>
+
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false">
+        <maml:name>Append</maml:name>
+        <dev:type>
+          <maml:name>Bool</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <maml:description>
+          <maml:para>Zip File Path</maml:para>
+        </maml:description>
+      </command:parameter>
+
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" >
+        <maml:name>EntryRoot</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>The root directory for an entry. The zip archive will contain directories relative to the root</maml:para>
+          <maml:para>If the file C:\windows\system32\mmc.exe is added, a root setting of C:\ results in a zip entry \windows\system32\mmc.exe. A root setting of C:\windows results in a zip entry \system32\mmc.exe and so on.</maml:para>
+        </maml:description>
+      </command:parameter>
+
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" >
+        <maml:name>EntryDir</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>The base directory for enties in the zip archive. Every entry is prepended with this directory.</maml:para>
+          <maml:para>If the file C:\pagefile.sys is added, a directory setting of Backup\Dump results in a zip entry \Backup\Dump\pagefile.sys.</maml:para>
+        </maml:description>
+      </command:parameter>
+
+
+    </command:parameters>
+    
+    
+    
+    <command:terminatingErrors>
+    </command:terminatingErrors>
+    
+    <command:nonTerminatingErrors>
+    </command:nonTerminatingErrors>
+    
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    
+    
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Basic Usage --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para></maml:para>
+        </maml:introduction>
+        <dev:code>
+          Get-ChildItem -recurse | Export-Zip Test.zip
+        </dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Takes the files found by the Get-ChildItem command and zip them into the archive Test.Zip</maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>Get-ChildItem -recurse | Export-Zip Test.zip</command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>    
+    </command:examples>
+    
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+    <command:details>
+      <command:name>Import-Zip</command:name>
+      <maml:description>
+        <maml:para>Imports files from a Zip Archive</maml:para>
+      </maml:description>
+
+      <maml:copyright>
+        <maml:para>Copyright (C) 2010 by Maierhofer Software, Germany</maml:para>
+      </maml:copyright>
+
+      <command:verb>Export</command:verb>
+      <command:noun>Zip</command:noun>
+
+      <dev:version>0.1</dev:version>
+
+    </command:details>
+    <maml:description>
+      <!--This is the Description section-->
+      <maml:para>Importt-Zip imports files from a zip archive.</maml:para>
+    </maml:description>
+
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Import-Zip</maml:name>
+
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)" position="2">
+          <maml:name>TargetDir</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>        
+        
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)" position = "1" >
+          <maml:name>ZipFile</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>
+
+        <command:parameter required = "false" variableLength = "false" globbing = "false" pipelineInput = "true (ByValue)">
+          <maml:name>EntryRoot</maml:name>
+          <command:parameterValue required="true" variableLength = "false" >String</command:parameterValue>
+        </command:parameter>
+
+      </command:syntaxItem>
+    </command:syntax>
+
+    <command:parameters>
+
+
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="1">
+        <maml:name>TargetDir</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>The directory where the zip entries are extracted</maml:para>
+        </maml:description>
+      </command:parameter>
+      
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="1">
+        <maml:name>ZipFile</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>Zip File Path</maml:para>
+        </maml:description>
+      </command:parameter>
+
+
+
+      <command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" >
+        <maml:name>EntryRoot</maml:name>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri/>
+        </dev:type>
+        <dev:defaultValue>None</dev:defaultValue>
+        <maml:description>
+          <maml:para>The root directory in the zip file. Entries which aren't in the root would'nt be extracted</maml:para>
+        </maml:description>
+      </command:parameter>
+    </command:parameters>
+
+
+
+    <command:terminatingErrors>
+    </command:terminatingErrors>
+
+    <command:nonTerminatingErrors>
+    </command:nonTerminatingErrors>
+
+    <maml:alertSet>
+      <maml:title></maml:title>
+      <maml:alert>
+        <maml:para></maml:para>
+      </maml:alert>
+    </maml:alertSet>
+
+
+    <command:examples>
+      <command:example>
+        <maml:title>-------------------------- Basic Usage --------------------------</maml:title>
+        <maml:introduction>
+          <maml:para></maml:para>
+        </maml:introduction>
+        <dev:code>
+          ImportZip C:\Target Test.zip
+        </dev:code>
+        <dev:remarks>
+          <maml:para>Description</maml:para>
+          <maml:para>-----------</maml:para>
+          <maml:para>Extracts the Zip archive</maml:para>
+        </dev:remarks>
+        <command:commandLines>
+          <command:commandLine>
+            <command:commandText>ImportZip C:\Target Test.zip</command:commandText>
+          </command:commandLine>
+        </command:commandLines>
+      </command:example>
+    </command:examples>
+
+    <maml:relatedLinks>
+    </maml:relatedLinks>
+  </command:command>
+
+</helpItems>
+

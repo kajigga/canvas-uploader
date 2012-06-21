@@ -1,0 +1,12 @@
+LIST DICT PUC.CANVAS.STU.ACAD.CRED LPTR BY TYP BY LOC TYP LOC CONV NAME FORMAT SM ASSOC 13:15:43 Jun 15 2012 1
+@ID............ TYP LOC.......... CONV NAME........... FORMAT SM ASSOC.....
+ 
+@ID             D               0      PUC.CANVAS.STU. 32L    S
+                                       ACAD.CRED
+XPCSAC.STATUS   D               1                      2L     S
+XPCSAC.DATE     D               2 D2/M                 8R     S
+                                  DY
+XPCSAC.TIME     D               3 MTS                  10R    S
+PUC.CANVAS.STU. I   FIELD(@ID,"*"                      10L    S
+ACAD.CRED.ID        ,1)
+5 records listed

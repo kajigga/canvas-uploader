@@ -1,0 +1,7 @@
+Package ID: P01_XDPB32-SECURE*001
+Package Name: XDPB32-SECURE
+Exported on 06/18/2012 at 04:18PM by SPENNERS
+Files included in release package image:
+   RELEASE_PKGS_1
+   RELEASE_ITEMS_1
+   RELEASE_ITEM_ITEMS_1

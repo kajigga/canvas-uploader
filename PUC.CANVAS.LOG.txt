@@ -1,0 +1,12 @@
+LIST DICT PUC.CANVAS.LOG LPTR BY TYP BY LOC TYP LOC CONV NAME FORMAT SM ASSOC 13:13:36 Jun 15 2012 1
+@ID............ TYP LOC.......... CONV NAME........... FORMAT SM ASSOC.....
+ 
+@ID             D               0      PUC.CANVAS.LOG  32L    S
+XPCL.DATE       D               1 D2/M                 8R     S
+                                  DY
+XPCL.TIME       D               2 MTS                  10R    S
+XPCL.LOG        D               3                      70L    M
+XPCL.TEST       D               4                      10L    M
+PUC.CANVAS.LOG. I   FIELD(@ID,"*"                      10R    S
+ID                  ,1)
+6 records listed

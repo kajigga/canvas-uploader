@@ -1,0 +1,12 @@
+LIST DICT PUC.CANVAS.STU.TERMS LPTR BY TYP BY LOC TYP LOC CONV NAME FORMAT SM ASSOC 13:14:57 Jun 15 2012 1
+@ID............ TYP LOC.......... CONV NAME........... FORMAT SM ASSOC.....
+ 
+@ID             D               0      PUC.CANVAS.STU. 32L    S
+                                       TERMS
+XPCST.STATUS    D               1                      2L     S
+XPCST.DATE      D               2 D2/M                 8R     S
+                                  DY
+XPCST.TIME      D               3 MTS                  10R    S
+PUC.CANVAS.STU. I   FIELD(@ID,"*"                      20L    S
+TERMS.ID            ,1)
+5 records listed

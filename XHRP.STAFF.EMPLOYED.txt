@@ -1,0 +1,39 @@
+LIST DICT HRPER 'XHRP.STAFF.EMPLOYED' LPTR BY TYP BY LOC TYP LOC CONV NAME FORMAT SM ASSOC 14:24:07 Jun 15 2012 1
+@ID............ TYP LOC.......... CONV NAME........... FORMAT SM ASSOC.....
+ 
+XHRP.STAFF.EMPL I   TRANS("PERSTA      STAFF           3R     S
+OYED                T",HRP.ACTIVE
+                    .STATUS,"PERS
+                    TAT.PRIMARY.P
+                    ERPOS.ID","X"
+                    ); TRANS("PER
+                    POS",@1,"ALL.
+                    POSITION.WAGE
+                    S","X"); FIEL
+                    D(@2,@VM,1);
+                    TRANS("PERPOS
+                    WG",@3,"PPWG.
+                    END.DATE","X"
+                    ); 0; IF @4 =
+                     '' OR @4 GT
+                    DATE() THEN (
+                    ((@5) + (1)))
+                     ELSE @5; IF
+                    (TRANS("PERPO
+                    SWG",@3,"PPWG
+                    .PAYCLASS.ID"
+                    ,"X") EQ "FS"
+                     OR TRANS("PE
+                    RPOSWG",@3,"P
+                    PWG.PAYCLASS.
+                    ID","X") EQ "
+                    SH") OR TRANS
+                    ("PERPOSWG",@
+                    3,"PPWG.PAYCL
+                    ASS.ID","X")
+                    EQ "SS" THEN
+                    (((@6) + (1))
+                    ) ELSE @6; IF
+                     @7 EQ 2 THEN
+                     (1) ELSE (0)
+1 record listed
